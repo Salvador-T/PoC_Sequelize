@@ -1,0 +1,26 @@
+{
+  "name": "poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all",
+    "crud": "node demo/01-crud.js",
+    "n1": "node demo/02-n-mas-1.js",
+    "eager": "node demo/03-eager.js",
+    "tx": "node demo/04-transaccion.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "mysql2": "^3.24.6",
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.5"
+  }
+}

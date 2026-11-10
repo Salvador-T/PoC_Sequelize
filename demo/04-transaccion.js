@@ -1,4 +1,4 @@
-const { sequelize, Alumno, Inscripcion } = require('../models');
+import { sequelize, Alumno, Inscripcion } from '../models/index.js';
 
 (async () => {
   try {

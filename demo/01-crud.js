@@ -1,4 +1,4 @@
-const { sequelize, Alumno } = require('../models');
+import { sequelize, Alumno } from '../models/index.js';
 
 (async () => {
   // CREATE: Sequelize genera el INSERT

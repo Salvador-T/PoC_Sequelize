@@ -1,4 +1,4 @@
-const { sequelize, Alumno, Curso } = require('../models');
+import { sequelize, Alumno, Curso } from '../models/index.js';
 
 (async () => {
   let consultas = 0;

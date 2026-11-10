@@ -1,4 +1,4 @@
-const { sequelize, Alumno, Curso, Docente } = require('../models');
+import { sequelize, Alumno, Curso, Docente } from '../models/index.js';
 
 (async () => {
   const alumnos = await Alumno.findAll({

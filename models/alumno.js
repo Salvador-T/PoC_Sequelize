@@ -1,20 +1,24 @@
-module.exports = (sequelize, DataTypes) => {
-    const Alumno = sequelize.define('Alumno', {
-        nombre: { type: DataTypes.STRING, allowNull: false },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: { isEmail: true }
-        }
-    }, { tableName: 'alumnos' });
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/database.js';
 
-    Alumno.associate = (models) => {
-        Alumno.belongsToMany(models.Curso, {
-            through: models.Inscripcion,
-            foreignKey: 'alumnoId'
-        });
-    };
+export const Alumno = sequelize.define('Alumno', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    nombre: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: { isEmail: true }
+    }
+}, {
+    tableName: 'alumnos'
+});
 
-    return Alumno;
-};
+export default Alumno;

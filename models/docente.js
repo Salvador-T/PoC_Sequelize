@@ -1,9 +1,18 @@
-module.exports = (sequelize, DataTypes) => {
-    const Docente = sequelize.define('Docente', {
-        nombre: { type: DataTypes.STRING, allowNull: false }
-    }, { tableName: 'docentes' });
-    Docente.associate = (models) => {
-        Docente.hasMany(models.Curso, { foreignKey: 'docenteId' });
-    };
-    return Docente;
-};
+import {DataTypes} from 'sequelize';
+import {sequelize} from '../config/database.js';
+
+export const Docente = sequelize.define('Docente', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    nombre: { 
+        type: DataTypes.STRING, 
+        allowNull: false 
+    }
+}, {
+    tableName: 'docentes'
+});
+
+export default Docente;

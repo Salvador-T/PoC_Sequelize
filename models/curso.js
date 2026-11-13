@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../config/database.js';
 
-export const Curso = sequelize.define('Curso', {
+export const Curso = sequelize.define('Curso', { 
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -22,4 +22,4 @@ export const Curso = sequelize.define('Curso', {
     tableName: 'cursos'
 });
 
-export default Curso;
+export default Curso; // Exportacion por defecto para no tener que poner {Curso}

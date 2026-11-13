@@ -11,11 +11,12 @@ import { sequelize, Alumno } from '../models/index.js';
   // Validación: un email inválido nunca llega a la base
   try {
     await Alumno.create({ nombre: 'Prueba', email: 'esto-no-es-un-mail' });
-  } catch (e) {
+  } 
+  catch (e) {
     console.log('\nRechazado por validación:', e.errors[0].message);
   }
 
-  // DELETE
+  //DELETE
   await ana.destroy();
   await sequelize.close();
 })();

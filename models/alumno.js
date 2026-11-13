@@ -18,7 +18,7 @@ export const Alumno = sequelize.define('Alumno', {
         validate: { isEmail: true }
     }
 }, {
-    tableName: 'alumnos'
+    tableName: 'alumnos' // Para forzar el nombre en la tabla
 });
 
-export default Alumno;
+export default Alumno; // Exportacion por defecto para no tener que poner {Alumno}

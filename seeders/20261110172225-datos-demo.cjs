@@ -7,14 +7,34 @@ module.exports = {
     const fechas = { createdAt: ahora, updatedAt: ahora };
     // 1. Insertamos 2 docentes
     await queryInterface.bulkInsert('docentes', [
-      { nombre: 'Laura Gómez', ...fechas },
-      { nombre: 'Martín Ruiz', ...fechas }
+      { 
+        nombre: 'Laura Gómez', 
+        ...fechas 
+      },
+      { 
+        nombre: 'Martín Ruiz', 
+        ...fechas 
+      }
     ]);
     // 2. Insertamos 3 cursos
     await queryInterface.bulkInsert('cursos', [
-      { nombre: 'Inglés inicial', nivel: 'A1', docenteId: 1, ...fechas },
-      { nombre: 'Inglés intermedio', nivel: 'B1', docenteId: 1, ...fechas },
-      { nombre: 'Conversación', nivel: 'B2', docenteId: 2, ...fechas }
+      { 
+        nombre: 'Inglés inicial', 
+        nivel: 'A1', 
+        docenteId: 1, 
+        ...fechas 
+      },
+      { 
+        nombre: 'Inglés intermedio', 
+        nivel: 'B1', 
+        docenteId: 1, 
+        ...fechas 
+      },
+      { 
+        nombre: 'Conversación',
+        nivel: 'B2', 
+        docenteId: 2, 
+        ...fechas }
     ]);
     // 3. Generamos e insertamos 20 alumnos
     const alumnos = Array.from({ length: 20 }, (_, i) => ({
